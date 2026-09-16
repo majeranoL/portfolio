@@ -35,13 +35,18 @@ export function useTheme() {
       root.style.setProperty("--origin-x", `${origin.x}px`);
       root.style.setProperty("--origin-y", `${origin.y}px`);
     }
+    const ring = root.querySelector<HTMLElement>(".theme-ring");
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (typeof document.startViewTransition !== "function" || reduced) {
       setTheme((current) => getNextTheme(current));
       return;
     }
-    document.startViewTransition(() => {
+    const transition = document.startViewTransition(() => {
+      ring?.style.setProperty("opacity", "1");
       setTheme((current) => getNextTheme(current));
+    });
+    transition.finished.finally(() => {
+      ring?.style.setProperty("opacity", "0");
     });
   }, []);
 

@@ -1,4 +1,6 @@
 :root {
+  --wipe-duration: 2.5s;
+  --wipe-easing: cubic-bezier(0.16, 1, 0.3, 1);
   --font-display: "Space Grotesk", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
@@ -175,12 +177,37 @@ img {
   transform: none;
 }
 
+.theme-ring {
+  position: fixed;
+  left: var(--origin-x, 50vw);
+  top: var(--origin-y, 50vh);
+  translate: -50% -50%;
+  width: 300vmax;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  box-shadow:
+    0 0 24px 8px var(--accent-glow),
+    inset 0 0 40px var(--accent-glow);
+  opacity: 0;
+  pointer-events: none;
+  view-transition-name: theme-ring;
+}
+
 ::view-transition-old(root) {
   animation: none;
 }
 
 ::view-transition-new(root) {
-  animation: theme-wipe 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: theme-wipe 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+::view-transition-old(theme-ring) {
+  opacity: 0;
+}
+
+::view-transition-new(theme-ring) {
+  animation: theme-ring-grow 2.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes theme-wipe {
@@ -189,6 +216,15 @@ img {
   }
   to {
     clip-path: circle(150vmax at var(--origin-x, 50vw) var(--origin-y, 50vh));
+  }
+}
+
+@keyframes theme-ring-grow {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
   }
 }
 

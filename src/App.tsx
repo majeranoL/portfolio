@@ -18,6 +18,7 @@ export default function App() {
 
   return (
     <div className="grain cursor-glow">
+      <span className="theme-ring" aria-hidden="true" />
       <Nav theme={theme} onToggleTheme={toggleTheme} />
       <main>
         <Hero />
