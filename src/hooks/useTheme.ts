@@ -36,12 +36,11 @@ export function useTheme() {
       root.style.setProperty("--origin-y", `${origin.y}px`);
     }
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const startTransition = document.startViewTransition;
-    if (typeof startTransition !== "function" || reduced) {
+    if (typeof document.startViewTransition !== "function" || reduced) {
       setTheme((current) => getNextTheme(current));
       return;
     }
-    startTransition(() => {
+    document.startViewTransition(() => {
       setTheme((current) => getNextTheme(current));
     });
   }, []);
