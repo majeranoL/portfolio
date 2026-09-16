@@ -1,9 +1,10 @@
 import { site, navLinks } from "../lib/content";
 import { ThemeToggle } from "./ThemeToggle";
+import type { Origin } from "../hooks/useTheme";
 
 interface NavProps {
   theme: "dark" | "light";
-  onToggleTheme: () => void;
+  onToggleTheme: (origin: Origin) => void;
 }
 
 export function Nav({ theme, onToggleTheme }: NavProps) {

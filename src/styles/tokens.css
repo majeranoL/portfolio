@@ -175,6 +175,23 @@ img {
   transform: none;
 }
 
+::view-transition-old(root) {
+  animation: none;
+}
+
+::view-transition-new(root) {
+  animation: theme-wipe 0.45s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+@keyframes theme-wipe {
+  from {
+    clip-path: circle(0px at var(--origin-x, 50vw) var(--origin-y, 50vh));
+  }
+  to {
+    clip-path: circle(150vmax at var(--origin-x, 50vw) var(--origin-y, 50vh));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -186,5 +203,9 @@ img {
   }
   .cursor-glow::before {
     display: none;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.01ms;
   }
 }

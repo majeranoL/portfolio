@@ -1,15 +1,27 @@
+import type { MouseEvent } from "react";
+import type { Origin } from "../hooks/useTheme";
+
 interface ThemeToggleProps {
   theme: "dark" | "light";
-  onToggle: () => void;
+  onToggle: (origin: Origin) => void;
 }
 
 export function ThemeToggle({ theme, onToggle }: ThemeToggleProps) {
   const isDark = theme === "dark";
+
+  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    onToggle({
+      x: rect.left + rect.width / 2,
+      y: rect.top + rect.height / 2,
+    });
+  };
+
   return (
     <button
       type="button"
       className="theme-toggle"
-      onClick={onToggle}
+      onClick={handleClick}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
       {isDark ? (

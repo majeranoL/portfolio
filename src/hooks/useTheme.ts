@@ -4,6 +4,8 @@ const STORAGE_KEY = "theme";
 
 type Theme = "dark" | "light";
 
+export type Origin = { x: number; y: number };
+
 function getInitialTheme(): Theme {
   const stored = localStorage.getItem(STORAGE_KEY);
   if (stored === "dark" || stored === "light") {
@@ -12,6 +14,10 @@ function getInitialTheme(): Theme {
   return window.matchMedia("(prefers-color-scheme: light)").matches
     ? "light"
     : "dark";
+}
+
+function getNextTheme(current: Theme): Theme {
+  return current === "dark" ? "light" : "dark";
 }
 
 export function useTheme() {
@@ -23,8 +29,21 @@ export function useTheme() {
     localStorage.setItem(STORAGE_KEY, theme);
   }, [theme]);
 
-  const toggleTheme = useCallback(() => {
-    setTheme((current) => (current === "dark" ? "light" : "dark"));
+  const toggleTheme = useCallback((origin?: Origin) => {
+    const root = document.documentElement;
+    if (origin) {
+      root.style.setProperty("--origin-x", `${origin.x}px`);
+      root.style.setProperty("--origin-y", `${origin.y}px`);
+    }
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const startTransition = document.startViewTransition;
+    if (typeof startTransition !== "function" || reduced) {
+      setTheme((current) => getNextTheme(current));
+      return;
+    }
+    startTransition(() => {
+      setTheme((current) => getNextTheme(current));
+    });
   }, []);
 
   return { theme, toggleTheme };
