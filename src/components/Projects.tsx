@@ -6,12 +6,12 @@ export function Projects() {
     <section id="projects" className="section">
       <div className="container">
         <Reveal>
-          <p className="section-label">02 / Projects</p>
+          <p className="section-label">03 / Projects</p>
         </Reveal>
         <div className="projects-list">
           {projects.map((project, index) => (
             <Reveal key={project.name} delay={index * 100}>
-              <a className="project-row" href={project.href}>
+              <article className="project-row">
                 <div className="project-visual" aria-hidden="true">
                   <span className="project-index">
                     {"0"}
@@ -20,11 +20,16 @@ export function Projects() {
                 </div>
                 <div className="project-copy">
                   <div className="project-meta">
+                    <span className="project-role">{project.role}</span>
                     <span className="project-year">{project.year}</span>
-                    <span className="project-arrow">{"->"}</span>
                   </div>
                   <h3 className="project-name">{project.name}</h3>
                   <p className="project-desc">{project.description}</p>
+                  <ul className="project-highlights">
+                    {project.highlights.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
                   <ul className="project-stack">
                     {project.stack.map((item) => (
                       <li key={item} className="badge">
@@ -32,8 +37,26 @@ export function Projects() {
                       </li>
                     ))}
                   </ul>
+                  <div className="project-links">
+                    <a
+                      className="project-link"
+                      href={project.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {"Live ->"}
+                    </a>
+                    <a
+                      className="project-link"
+                      href={project.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {"Repo ->"}
+                    </a>
+                  </div>
                 </div>
-              </a>
+              </article>
             </Reveal>
           ))}
         </div>

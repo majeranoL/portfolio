@@ -12,9 +12,14 @@ export function Contact() {
           <h2 className="section-title glow contact-title">
             {site.contact.headline}
           </h2>
-          <a className="contact-email" href={`mailto:${site.email}`}>
-            {site.email}
-          </a>
+          <div className="contact-links">
+            <a className="contact-email" href={`mailto:${site.email}`}>
+              {site.email}
+            </a>
+            <a className="contact-phone" href={`tel:${site.phone.replace(/\s/g, "")}`}>
+              {site.phone}
+            </a>
+          </div>
         </Reveal>
       </div>
     </section>

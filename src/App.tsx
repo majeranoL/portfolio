@@ -3,8 +3,10 @@ import { useCursorGlow } from "./hooks/useCursorGlow";
 import { Nav } from "./components/Nav";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
+import { Experience } from "./components/Experience";
 import { Projects } from "./components/Projects";
 import { Stack } from "./components/Stack";
+import { Education } from "./components/Education";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import "./styles/tokens.css";
@@ -20,8 +22,10 @@ export default function App() {
       <main>
         <Hero />
         <About />
+        <Experience />
         <Projects />
         <Stack />
+        <Education />
         <Contact />
       </main>
       <Footer />
