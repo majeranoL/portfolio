@@ -11,7 +11,7 @@ export function Footer() {
           {" — "}
           {year}
         </span>
-        <span className="footer-meta">{"built with the void"}</span>
+        <span className="footer-meta">{site.footer.note}</span>
       </div>
     </footer>
   );

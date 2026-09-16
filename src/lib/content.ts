@@ -7,6 +7,17 @@ export const site = {
     name: "$ whoami",
     lines: ["a builder", "ship it, then polish it"],
   },
+  about: {
+    headline: "I build products that live on the web.",
+    paragraph:
+      "Short paragraph about who you are, what you care about, and how you approach the work. Replace this copy in src/lib/content.ts.",
+  },
+  contact: {
+    headline: "Got a problem to solve?",
+  },
+  footer: {
+    note: "built with the void",
+  },
 } as const;
 
 export const navLinks = [

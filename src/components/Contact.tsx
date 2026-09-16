@@ -10,7 +10,7 @@ export function Contact() {
         </Reveal>
         <Reveal delay={100}>
           <h2 className="section-title glow contact-title">
-            Got a problem to solve?
+            {site.contact.headline}
           </h2>
           <a className="contact-email" href={`mailto:${site.email}`}>
             {site.email}

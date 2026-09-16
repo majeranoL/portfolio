@@ -10,17 +10,12 @@ export function About() {
         </Reveal>
         <div className="about-grid">
           <Reveal delay={100}>
-            <h2 className="section-title">
-              I build products that live on the web.
-            </h2>
-            <p className="section-text">
-              Short paragraph about who you are, what you care about, and how
-              you approach the work. Replace this copy in src/lib/content.ts.
-            </p>
+            <h2 className="section-title">{site.about.headline}</h2>
+            <p className="section-text">{site.about.paragraph}</p>
           </Reveal>
           <Reveal delay={200}>
             <div className="terminal" aria-hidden="true">
-              <p className="terminal-head">terminal — zsh</p>
+              <p className="terminal-head">{site.whoami.name}</p>
               {site.whoami.lines.map((line) => (
                 <p key={line} className="terminal-line">
                   <span className="terminal-prompt">{"$"}</span>
