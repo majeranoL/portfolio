@@ -59,10 +59,19 @@ export const navLinks = [
   { label: "Contact", href: "#contact" },
 ] as const;
 
-export const experience = [
+export type ExperienceRole = {
+  title: string;
+  company: string;
+  companyUrl?: string;
+  period: string;
+  points: readonly string[];
+};
+
+export const experience: readonly ExperienceRole[] = [
   {
     title: "Software Quality Assurance Specialist",
     company: "Xurpas Inc.",
+    companyUrl: "https://xurpas.com",
     period: "Apr 2026 - Present",
     points: [
       "Execute comprehensive functional, integration, and end-to-end regression testing across web and mobile application releases using structured manual test suites.",
@@ -73,6 +82,7 @@ export const experience = [
   {
     title: "Software Quality Assurance Intern",
     company: "Xurpas Inc.",
+    companyUrl: "https://xurpas.com",
     period: "Sep 2025 - Dec 2025",
     points: [
       "Conducted rigorous web application testing for client platforms, including the MWSS website, validating system performance, cross-browser compatibility, and overall site reliability.",
@@ -92,7 +102,7 @@ export const experience = [
       "Expanded my network and perspective by collaborating with fellow developers and engaging with mentors and partners from Converge, PCCI, Rev21 Labs, and DTI.",
     ],
   },
-] as const;
+];
 
 export const projects = [
   {

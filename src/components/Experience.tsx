@@ -15,7 +15,20 @@ export function Experience() {
                 <header className="experience-head">
                   <div>
                     <h3 className="experience-title">{role.title}</h3>
-                    <p className="experience-company">{role.company}</p>
+                    <p className="experience-company">
+                    {role.companyUrl ? (
+                      <a
+                        className="experience-company-link"
+                        href={role.companyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {role.company}
+                      </a>
+                    ) : (
+                      role.company
+                    )}
+                  </p>
                   </div>
                   <span className="experience-period">{role.period}</span>
                 </header>
