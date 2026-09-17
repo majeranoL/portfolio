@@ -1,4 +1,4 @@
-import { site, resume } from "../lib/content";
+import { site } from "../lib/content";
 import { Reveal } from "./Reveal";
 
 export function Hero() {
@@ -20,18 +20,6 @@ export function Hero() {
             {site.name}
             <span className="hero-role">{site.role}</span>
           </h1>
-        </Reveal>
-        <Reveal delay={200}>
-          <a
-            className="hero-cta"
-            href={resume.path}
-            download={resume.filename}
-          >
-            <span className="hero-cta-icon" aria-hidden="true">
-              {"↓"}
-            </span>
-            Download Resume
-          </a>
         </Reveal>
       </div>
     </section>
