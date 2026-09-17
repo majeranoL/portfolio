@@ -1,5 +1,6 @@
 import { projects } from "../lib/content";
 import { Reveal } from "./Reveal";
+import { ProjectPreview } from "./ProjectPreview";
 
 export function Projects() {
   return (
@@ -17,6 +18,11 @@ export function Projects() {
                     {"0"}
                     {index + 1}
                   </span>
+                  <ProjectPreview
+                    name={project.name}
+                    demoUrl={project.demo}
+                    index={index}
+                  />
                 </div>
                 <div className="project-copy">
                   <div className="project-meta">

@@ -6,7 +6,7 @@ export function Stack() {
     <section id="stack" className="section">
       <div className="container">
         <Reveal>
-          <p className="section-label">03 / Stack &amp; Skills</p>
+          <p className="section-label">04 / Stack &amp; Skills</p>
         </Reveal>
         <div className="stack-grid">
           {stack.map((group, index) => (

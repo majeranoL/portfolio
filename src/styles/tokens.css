@@ -234,6 +234,9 @@ img {
   .footer-status-dot {
     animation: none;
   }
+  .terminal-caret {
+    animation: none;
+  }
   .reveal {
     transition: none;
     opacity: 1;

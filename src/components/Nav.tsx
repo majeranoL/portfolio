@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { site, navLinks } from "../lib/content";
+import { site, navLinks, resume } from "../lib/content";
 import { ThemeToggle } from "./ThemeToggle";
 import type { Origin } from "../hooks/useTheme";
 
@@ -53,6 +53,15 @@ export function Nav({ theme, onToggleTheme }: NavProps) {
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                className="nav-resume"
+                href={resume.path}
+                download={resume.filename}
+              >
+                {"↓ resume"}
+              </a>
+            </li>
             <li>
               <ThemeToggle theme={theme} onToggle={onToggleTheme} />
             </li>

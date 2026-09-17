@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { site } from "../lib/content";
 import { Reveal } from "./Reveal";
 
@@ -17,6 +17,37 @@ const SOCIAL_ICONS: Record<string, string> = {
 
 export function Contact() {
   const [form, setForm] = useState(INITIAL_FORM);
+  const [copied, setCopied] = useState(false);
+  const copyTimer = useRef<number | null>(null);
+
+  useEffect(
+    () => () => {
+      if (copyTimer.current) window.clearTimeout(copyTimer.current);
+    },
+    []
+  );
+
+  const copyEmail = async () => {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(site.email);
+      } else {
+        const textarea = document.createElement("textarea");
+        textarea.value = site.email;
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+      }
+      setCopied(true);
+      if (copyTimer.current) window.clearTimeout(copyTimer.current);
+      copyTimer.current = window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
+  };
 
   const setField = (field: keyof typeof INITIAL_FORM) => (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -69,6 +100,32 @@ export function Contact() {
           </div>
         </Reveal>
         <Reveal delay={150}>
+          <div className="contact-actions">
+            <div className="contact-copy-wrap">
+              <button
+                type="button"
+                className={`contact-copy${
+                  copied ? " contact-copy--copied" : ""
+                }`}
+                onClick={copyEmail}
+              >
+                {copied ? "✓ Copied" : "Copy Email"}
+              </button>
+              <span
+                className="contact-copy-tip"
+                role="status"
+                aria-hidden={!copied}
+              >
+                Copied to Clipboard!
+              </span>
+            </div>
+            <span className="contact-availability">
+              <span className="availability-dot" aria-hidden="true" />
+              {site.contact.availability}
+            </span>
+          </div>
+        </Reveal>
+        <Reveal delay={200}>
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="contact-field">
               <label className="contact-label" htmlFor="contact-name">

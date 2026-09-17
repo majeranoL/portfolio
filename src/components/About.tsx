@@ -1,5 +1,6 @@
 import { site } from "../lib/content";
 import { Reveal } from "./Reveal";
+import { Terminal } from "./Terminal";
 
 export function About() {
   return (
@@ -14,15 +15,7 @@ export function About() {
             <p className="section-text">{site.about.paragraph}</p>
           </Reveal>
           <Reveal delay={200}>
-            <div className="terminal" aria-hidden="true">
-              <p className="terminal-head">{site.whoami.name}</p>
-              {site.whoami.lines.map((line) => (
-                <p key={line} className="terminal-line">
-                  <span className="terminal-prompt">{"$"}</span>
-                  {line}
-                </p>
-              ))}
-            </div>
+            <Terminal />
           </Reveal>
         </div>
       </div>

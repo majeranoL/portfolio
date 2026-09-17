@@ -19,6 +19,7 @@ export const site = {
   },
   contact: {
     headline: "Got a problem to solve?",
+    availability: "Based in Cavite, Philippines (GMT+8) · Response time < 24 hrs",
     socials: [
       {
         label: "LinkedIn",
@@ -48,6 +49,11 @@ export const site = {
   footer: {
     note: "~ fin",
   },
+} as const;
+
+export const resume = {
+  path: "/resume.pdf",
+  filename: "lian-majerano-resume.pdf",
 } as const;
 
 export const navLinks = [
@@ -307,12 +313,6 @@ export const education = [
     institution: "St. Dominic College of Asia",
     institutionUrl: "https://stdominiccollege.edu.ph",
     honors: "Dean's Lister (1st & 4th Year), Best in Capstone Project",
-  },
-  {
-    degree: "Secondary Education",
-    institution: "Tanza National Comprehensive High School",
-    institutionUrl: "https://www.facebook.com/shstanzahigh",
-    honors: "Junior High School (Grades -10) · Senior High School (Grades 11-12), ABM Strand (Accountancy, Business & Management)",
   },
 ] as const;
 
