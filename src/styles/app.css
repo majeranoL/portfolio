@@ -239,8 +239,7 @@
       color-mix(in srgb, var(--text-primary) 10%, transparent) 0 1px,
       transparent 1px 42px
     );
-  transform: perspective(720px) rotateX(28deg)
-    translateY(-12%) translateX(calc(var(--tilt-x, 0px) * -0.2));
+  transform: perspective(720px) rotateX(28deg) translateY(-12%);
   transform-origin: bottom center;
   -webkit-mask-image: linear-gradient(
     to top,
@@ -266,65 +265,6 @@
   height: 6px;
   border-radius: 50%;
   background: var(--accent-strong);
-}
-
-.tilt-layer {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background: radial-gradient(
-    circle at var(--tilt-x, 50%) var(--tilt-y, 50%),
-    color-mix(in srgb, var(--text-primary) 12%, transparent) 0%,
-    color-mix(in srgb, var(--text-primary) 4%, transparent) 45%,
-    transparent 70%
-  );
-}
-
-.tilt-layer::after {
-  content: "";
-  position: absolute;
-  inset: -60%;
-  background: linear-gradient(
-    115deg,
-    transparent 40%,
-    color-mix(in srgb, var(--text-primary) 7%, transparent) 50%,
-    transparent 60%
-  );
-  transform: translateX(calc(var(--tilt-x, 0px) * 1.4));
-}
-
-.tilt-pill {
-  display: inline-flex;
-  align-items: center;
-  margin-top: var(--space-2);
-  padding: 0.4rem 0.9rem;
-  border: 1px solid var(--border-strong);
-  border-radius: 999px;
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-  transition:
-    color var(--transition),
-    border-color var(--transition);
-}
-
-.tilt-pill:hover {
-  color: var(--text-primary);
-  border-color: var(--text-primary);
-}
-
-.tilt-pill:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-@media (pointer: fine) {
-  .tilt-pill {
-    display: none;
-  }
 }
 
 .hero-title {

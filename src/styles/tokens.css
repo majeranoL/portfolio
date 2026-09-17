@@ -1,5 +1,5 @@
 :root {
-  --wipe-duration: 2.5s;
+  --wipe-duration: 1.8s;
   --wipe-easing: cubic-bezier(0.16, 1, 0.3, 1);
   --font-display: "Doto", "Space Grotesk", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
@@ -188,13 +188,17 @@ img {
   width: 300vmax;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 3px solid var(--accent);
+  border: 2px solid var(--accent);
   box-shadow:
-    0 0 24px 8px var(--accent-glow),
-    inset 0 0 40px var(--accent-glow);
+    0 0 20px 4px var(--accent-glow),
+    inset 0 0 30px var(--accent-glow);
   opacity: 0;
   pointer-events: none;
-  view-transition-name: theme-ring;
+}
+
+.theme-ring--run {
+  opacity: 1;
+  animation: theme-ring-grow var(--wipe-duration) var(--wipe-easing) forwards;
 }
 
 ::view-transition-old(root) {
@@ -202,15 +206,7 @@ img {
 }
 
 ::view-transition-new(root) {
-  animation: theme-wipe 2.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-::view-transition-old(theme-ring) {
-  opacity: 0;
-}
-
-::view-transition-new(theme-ring) {
-  animation: theme-ring-grow 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: theme-wipe var(--wipe-duration) var(--wipe-easing);
 }
 
 @keyframes theme-wipe {
@@ -245,6 +241,9 @@ img {
   }
   .cursor-glow::before {
     display: none;
+  }
+  .theme-ring--run {
+    animation-duration: 0.01ms;
   }
   ::view-transition-old(root),
   ::view-transition-new(root) {
