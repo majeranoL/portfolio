@@ -228,8 +228,8 @@ export const stack: ReadonlyArray<{
         url: "https://www.paymongo.com",
         logo: "/icons/paymongo.ico",
       },
-      { name: "AI Triage Systems" },
-      { name: "Multi-Role Architecture" },
+      { name: "AI Integration" },
+      { name: "Role-Based Portals" },
     ],
   },
 ] as const;

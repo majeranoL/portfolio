@@ -1,7 +1,12 @@
 import { site } from "../lib/content";
 import { Reveal } from "./Reveal";
 
-export function Hero() {
+interface HeroProps {
+  tiltEnabled: boolean;
+  onRequestTilt: () => void;
+}
+
+export function Hero({ tiltEnabled, onRequestTilt }: HeroProps) {
   return (
     <section id="top" className="hero">
       <div className="container hero-inner">
@@ -13,6 +18,15 @@ export function Hero() {
               {site.status}
             </span>
           </p>
+          {!tiltEnabled && (
+            <button
+              type="button"
+              className="tilt-pill"
+              onClick={onRequestTilt}
+            >
+              enable tilt
+            </button>
+          )}
         </Reveal>
         <Reveal delay={100}>
           <h1 className="hero-title glow">
