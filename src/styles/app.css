@@ -650,13 +650,19 @@
 
 /* ── Education ─────────────────────────────────── */
 
+.education-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
 .education-entry {
-  margin-top: var(--space-3);
   padding: var(--space-3);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius);
   background: var(--surface);
-  max-width: 640px;
+  height: 100%;
 }
 
 .education-degree {
@@ -681,7 +687,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #dc2626;
+  color: var(--text-primary);
   margin-top: 0.3rem;
   position: relative;
 }
@@ -707,6 +713,10 @@
   color: var(--text-secondary);
   margin-top: var(--space-1);
   font-size: 0.9rem;
+}
+
+.cert-section {
+  margin-top: var(--space-3);
 }
 
 .cert-grid {

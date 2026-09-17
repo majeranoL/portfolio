@@ -298,6 +298,12 @@ export const education = [
     institutionUrl: "https://stdominiccollege.edu.ph",
     honors: "Dean's Lister (1st & 4th Year), Best in Capstone Project",
   },
+  {
+    degree: "Secondary Education",
+    institution: "Tanza National Comprehensive High School",
+    institutionUrl: "https://www.facebook.com/shstanzahigh",
+    honors: "Junior High School (Grades -10) · Senior High School (Grades 11-12), ABM Strand (Accountancy, Business & Management)",
+  },
 ] as const;
 
 export const certifications = [

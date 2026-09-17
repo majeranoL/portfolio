@@ -8,24 +8,26 @@ export function Education() {
         <Reveal>
           <p className="section-label">06 / Education &amp; Certifications</p>
         </Reveal>
-        {education.map((entry, index) => (
-          <Reveal key={entry.institution} delay={index * 100}>
-            <div className="education-entry">
-              <h3 className="education-degree">{entry.degree}</h3>
-              <a
-                className="education-school"
-                href={entry.institutionUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {entry.institution}
-              </a>
-              <p className="education-honors">{entry.honors}</p>
-            </div>
-          </Reveal>
-        ))}
+        <div className="education-cards">
+          {education.map((entry, index) => (
+            <Reveal key={entry.institution} delay={index * 100}>
+              <div className="education-entry">
+                <h3 className="education-degree">{entry.degree}</h3>
+                <a
+                  className="education-school"
+                  href={entry.institutionUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {entry.institution}
+                </a>
+                <p className="education-honors">{entry.honors}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
         <Reveal delay={100}>
-          <div className="education-entry">
+          <div className="cert-section">
             <h3 className="education-card-title">Certifications</h3>
             <div className="cert-grid">
               {certifications.map((cert) => (
