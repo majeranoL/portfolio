@@ -124,6 +124,56 @@ export const stack: ReadonlyArray<{
   items: ReadonlyArray<StackItem>;
 }> = [
   {
+    group: "Languages",
+    items: [
+      {
+        name: "JavaScript (ES6+)",
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      },
+      {
+        name: "TypeScript",
+        url: "https://www.typescriptlang.org",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      },
+      {
+        name: "Python",
+        url: "https://www.python.org",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      },
+      {
+        name: "Java",
+        url: "https://www.oracle.com/java/",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+      },
+      {
+        name: "C",
+        url: "https://en.cppreference.com/w/c",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+      },
+      {
+        name: "C++",
+        url: "https://en.cppreference.com/w/cpp",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+      },
+      {
+        name: "PHP",
+        url: "https://www.php.net",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+      },
+      {
+        name: "HTML5",
+        url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      },
+      {
+        name: "CSS3",
+        url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      },
+    ],
+  },
+  {
     group: "Frontend",
     items: [
       {
@@ -137,24 +187,14 @@ export const stack: ReadonlyArray<{
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
       },
       {
-        name: "TypeScript",
-        url: "https://www.typescriptlang.org",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+        name: "Vue.js",
+        url: "https://vuejs.org",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
       },
       {
-        name: "JavaScript (ES6+)",
-        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-      },
-      {
-        name: "HTML5",
-        url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-      },
-      {
-        name: "CSS3",
-        url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+        name: "Angular",
+        url: "https://angular.dev",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg",
       },
       {
         name: "Tailwind CSS",
@@ -177,9 +217,14 @@ export const stack: ReadonlyArray<{
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
       },
       {
-        name: "PHP",
-        url: "https://www.php.net",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+        name: "CodeIgniter",
+        url: "https://codeigniter.com",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg",
+      },
+      {
+        name: "Frappe",
+        url: "https://frappeframework.com",
+        logo: "https://cdn.jsdelivr.net/npm/simple-icons/icons/frappe.svg",
       },
       { name: "REST API Design & Integration" },
     ],

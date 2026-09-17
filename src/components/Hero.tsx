@@ -9,6 +9,7 @@ interface HeroProps {
 export function Hero({ tiltEnabled, onRequestTilt }: HeroProps) {
   return (
     <section id="top" className="hero">
+      <div className="hero-grid" aria-hidden="true" />
       <div className="container hero-inner">
         <Reveal>
           <p className="hero-status">
