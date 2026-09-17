@@ -1,7 +1,7 @@
 :root {
   --wipe-duration: 2.5s;
   --wipe-easing: cubic-bezier(0.16, 1, 0.3, 1);
-  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-display: "DOTGothic16", "Space Grotesk", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
@@ -65,8 +65,9 @@ body {
 }
 
 ::selection {
-  background: var(--accent-strong);
-  color: var(--bg);
+  background: var(--bg);
+  color: var(--text-primary);
+  text-shadow: 0 0 12px currentColor;
 }
 
 a {

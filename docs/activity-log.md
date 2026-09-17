@@ -26,3 +26,13 @@
 ## 2026-09-17 (3)
 
 - Added circular theme-switch wipe: dark/light toggle now expands radially from the button using the View Transitions API + clip-path circle keyframe. Falls back to instant toggle when unsupported or prefers-reduced-motion. Committed 6e6cbbc.
+
+## 2026-09-17 (4)
+
+- Selection highlight now matches page background (--bg) per theme; selected letters keep text color with a subtle currentColor glow instead of the green bar.
+- Self-hosted NDot 55 (Nothing/Colophon dot-matrix, fan-archive source public/fonts/NDot-55.woff2) and pointed --font-display at it for headings; removed Space Grotesk from Google Fonts. Lint/typecheck/build pass.
+- Replaced NDot 55 with Google Fonts DOTGothic16 for --font-display (headings); NDot looked rough. Deleted public/fonts, dropped the @font-face block. Lint/typecheck/build pass.
+- Headings (hero, section titles, project/experience/education names) rendered uppercase via text-transform.
+- Split Education into two cards: school (institution links to stdominiccollege.edu.ph) and a separate Certifications card where Certiport badges link to their Credly public URLs in new tabs. content.ts now exports certifications as {name,url}. Lint/typecheck/build pass.
+- Upgraded certifications to clickable cards: each displays its Credly badge image + cert name as a responsive grid card link (new tab). content.ts certifications now carry an image field. Lint/typecheck/build pass.
+- Removed Certiport prefix from cert names and added a centered squiggle "Verify" footer (mirrored dot-squiggles flanking the label) to each cert card, accent on hover. Lint/typecheck/build pass.

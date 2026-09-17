@@ -129,10 +129,22 @@ export const education = [
   {
     degree: "Bachelor of Science in Information Technology",
     institution: "St. Dominic College of Asia",
+    institutionUrl: "https://stdominiccollege.edu.ph",
     honors: "Dean's Lister (1st & 4th Year), Best in Capstone Project",
-    certifications: [
-      "Certiport IT Specialist - Java",
-      "Certiport IT Specialist - Database",
-    ],
+  },
+] as const;
+
+export const certifications = [
+  {
+    name: "IT Specialist - Java",
+    url: "https://www.credly.com/badges/71da8007-0000-4dd0-9368-57a133a001fd/public_url",
+    image:
+      "https://images.credly.com/images/2210b6fe-0eda-415a-8aba-6c1400566728/linkedin_thumb_ITS-Badges_Java_1200px.png",
+  },
+  {
+    name: "IT Specialist - Database",
+    url: "https://www.credly.com/badges/b51478ca-63e9-49fc-860b-8e757baae983/public_url",
+    image:
+      "https://images.credly.com/images/49a492cd-5f72-4c9d-aafa-06649e4853fb/linkedin_thumb_MicrosoftTeams-image__5_.png",
   },
 ] as const;
