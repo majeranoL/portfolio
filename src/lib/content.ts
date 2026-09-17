@@ -19,9 +19,34 @@ export const site = {
   },
   contact: {
     headline: "Got a problem to solve?",
+    socials: [
+      {
+        label: "LinkedIn",
+        icon: "linkedin",
+        url: "https://www.linkedin.com/in/lian-majerano/",
+      },
+      { label: "GitHub", icon: "github", url: "https://github.com/majeranoL" },
+      {
+        label: "Instagram",
+        icon: "instagram",
+        url: "https://www.instagram.com/lianmajerano_/",
+      },
+      {
+        label: "Facebook",
+        icon: "facebook",
+        url: "https://www.facebook.com/zxcvb.4120",
+      },
+    ],
+    form: {
+      hint: "Opens a pre-filled draft in your mail app — just press send.",
+    },
+  },
+  github: {
+    user: "majeranoL",
+    url: "https://github.com/majeranoL",
   },
   footer: {
-    note: "built with the void",
+    note: "~ fin",
   },
 } as const;
 
@@ -30,6 +55,7 @@ export const navLinks = [
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Stack", href: "#stack" },
+  { label: "GitHub", href: "#github" },
   { label: "Contact", href: "#contact" },
 ] as const;
 

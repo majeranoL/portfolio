@@ -6,6 +6,7 @@ import { About } from "./components/About";
 import { Experience } from "./components/Experience";
 import { Projects } from "./components/Projects";
 import { Stack } from "./components/Stack";
+import { GitHub } from "./components/GitHub";
 import { Education } from "./components/Education";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
@@ -26,6 +27,7 @@ export default function App() {
         <Experience />
         <Projects />
         <Stack />
+        <GitHub />
         <Education />
         <Contact />
       </main>

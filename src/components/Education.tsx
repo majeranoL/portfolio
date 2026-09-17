@@ -6,7 +6,7 @@ export function Education() {
     <section id="education" className="section">
       <div className="container">
         <Reveal>
-          <p className="section-label">05 / Education &amp; Certifications</p>
+          <p className="section-label">06 / Education &amp; Certifications</p>
         </Reveal>
         {education.map((entry, index) => (
           <Reveal key={entry.institution} delay={index * 100}>
