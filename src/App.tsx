@@ -1,5 +1,6 @@
 import { useTheme } from "./hooks/useTheme";
 import { useCursorGlow } from "./hooks/useCursorGlow";
+import { useSmoothScroll } from "./hooks/useSmoothScroll";
 import { Nav } from "./components/Nav";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
@@ -16,6 +17,7 @@ import "./styles/app.css";
 export default function App() {
   const { theme, toggleTheme } = useTheme();
   useCursorGlow();
+  useSmoothScroll();
 
   return (
     <div className="grain cursor-glow">

@@ -1,10 +1,13 @@
 import { site } from "../lib/content";
+import { scrollToTop as lenisScrollToTop } from "../hooks/useSmoothScroll";
 
 export function Footer() {
   const year = new Date().getFullYear();
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (!lenisScrollToTop()) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   return (

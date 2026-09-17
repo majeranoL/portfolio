@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { site, navLinks, resume } from "../lib/content";
 import { ThemeToggle } from "./ThemeToggle";
+import { scrollToTarget } from "../hooks/useSmoothScroll";
 import type { Origin } from "../hooks/useTheme";
 
 interface NavProps {
@@ -25,7 +26,9 @@ export function Nav({ theme, onToggleTheme }: NavProps) {
   return (
     <header className="nav">
       <div className="container nav-inner">
-        <a className="nav-logo" href="#top">
+        <a className="nav-logo" href="#top" onClick={(e) => {
+          if (scrollToTarget("#top")) e.preventDefault();
+        }}>
           <span className="nav-logo-mark">{"//"}</span>
           <span>{site.name}</span>
         </a>
@@ -48,7 +51,13 @@ export function Nav({ theme, onToggleTheme }: NavProps) {
           >
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} onClick={close}>
+                <a
+                  href={link.href}
+                  onClick={(e) => {
+                    close();
+                    if (scrollToTarget(link.href)) e.preventDefault();
+                  }}
+                >
                   {link.label}
                 </a>
               </li>
