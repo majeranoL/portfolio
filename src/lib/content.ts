@@ -78,6 +78,18 @@ export const experience = [
       "Conducted rigorous web application testing for client platforms, including the MWSS website, validating system performance, cross-browser compatibility, and overall site reliability.",
       "Streamlined issue reporting workflows by managing Jira defect tickets, facilitating seamless communication between QA leads and developers.",
       "Produced clear technical documentation and structured manual test execution matrices for production-bound software builds.",
+      "Authored a comprehensive user manual and reference documentation for the MWSS system, translating complex workflows into clear step-by-step guides that empower end users and client stakeholders to navigate, understand, and operate the platform with confidence.",
+    ],
+  },
+  {
+    title: "Hackathon Participant",
+    company: "Byte Forward · Converge ICT Solutions",
+    period: "Sep 2025",
+    points: [
+      "One of ~10 teams at the Byte Forward Hackathon South Luzon leg, racing against a 24-hour clock to design, build, and pitch a working digital solution at Fynn Hotel, Bacoor, Cavite.",
+      "Tackled the Affordable Technology Integration for MSMEs challenge, scoping practical tech solutions that bring small businesses closer to digital adoption.",
+      "Delved deep into AI integration under real time pressure, applying emerging AI capabilities to a tangible business problem alongside student developers from across the region.",
+      "Expanded my network and perspective by collaborating with fellow developers and engaging with mentors and partners from Converge, PCCI, Rev21 Labs, and DTI.",
     ],
   },
 ] as const;
