@@ -242,15 +242,11 @@
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  will-change: transform;
   background: radial-gradient(
     circle at var(--tilt-x, 50%) var(--tilt-y, 50%),
-    var(--accent-glow) 0%,
-    transparent 60%
-  );
-  transform: translate(
-    calc(var(--tilt-x, 0px) * -0.5),
-    calc(var(--tilt-y, 0px) * -0.5)
+    color-mix(in srgb, var(--text-primary) 12%, transparent) 0%,
+    color-mix(in srgb, var(--text-primary) 4%, transparent) 45%,
+    transparent 70%
   );
 }
 
@@ -261,10 +257,10 @@
   background: linear-gradient(
     115deg,
     transparent 40%,
-    color-mix(in srgb, var(--text-primary) 4%, transparent) 50%,
+    color-mix(in srgb, var(--text-primary) 7%, transparent) 50%,
     transparent 60%
   );
-  transform: translateX(calc(var(--tilt-x, 0px) * 1.2));
+  transform: translateX(calc(var(--tilt-x, 0px) * 1.4));
 }
 
 .tilt-pill {

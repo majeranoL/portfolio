@@ -30,6 +30,7 @@ export function useTiltParallax() {
     }
 
     let rafId = 0;
+    let baseline: { gamma: number; beta: number } | null = null;
     let pendingX = 0;
     let pendingY = 0;
 
@@ -42,8 +43,12 @@ export function useTiltParallax() {
 
     const onOrientation = (event: DeviceOrientationEvent) => {
       if (event.gamma == null || event.beta == null) return;
-      pendingX = (clamp(event.gamma, -35, 35) / 35) * 30;
-      pendingY = (clamp(event.beta, 0, 60) / 60) * 30;
+      if (!baseline) baseline = { gamma: event.gamma, beta: event.beta };
+      const range = 44;
+      const dx = clamp(event.gamma - baseline.gamma, -range, range);
+      const dy = clamp(event.beta - baseline.beta, -range, range);
+      pendingX = (dx / range) * 48;
+      pendingY = (dy / range) * 48;
       if (!rafId) rafId = requestAnimationFrame(apply);
     };
 
