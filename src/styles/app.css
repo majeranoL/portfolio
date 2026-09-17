@@ -53,7 +53,7 @@
   bottom: -2px;
   width: 0;
   height: 1px;
-  background: var(--accent-strong);
+  background: var(--text-primary);
   transition: width var(--transition);
 }
 
@@ -80,8 +80,8 @@
 }
 
 .theme-toggle:hover {
-  color: var(--accent-strong);
-  border-color: var(--accent-strong);
+  color: var(--text-primary);
+  border-color: var(--text-primary);
 }
 
 /* ── Hero ──────────────────────────────────────── */
@@ -116,20 +116,20 @@
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(3.2rem, 8vw, 7rem);
-  font-weight: 700;
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  font-weight: 400;
   line-height: 1;
-  letter-spacing: -0.035em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 
 .hero-role {
   display: block;
   font-size: clamp(1.1rem, 2.5vw, 2.2rem);
-  font-weight: 500;
+  font-weight: 400;
   color: var(--text-secondary);
   margin-top: var(--space-1);
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
 /* ── Shared section ────────────────────────────── */
@@ -138,11 +138,22 @@
   padding: var(--space-5) 0;
 }
 
+.hero-title,
+.hero-role,
+.section-title,
+.project-index,
+.project-name,
+.experience-title,
+.education-degree,
+.education-card-title {
+  font-synthesis: none;
+}
+
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(1.6rem, 4vw, 2.6rem);
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  font-weight: 400;
+  letter-spacing: 0;
   line-height: 1.15;
   margin-top: var(--space-2);
   text-transform: uppercase;
@@ -223,14 +234,14 @@
 .project-index {
   font-family: var(--font-display);
   font-size: 4rem;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1;
   color: var(--border-strong);
   transition: color var(--transition);
 }
 
 .project-row:hover .project-index {
-  color: var(--accent-strong);
+  color: var(--text-primary);
 }
 
 .project-meta {
@@ -253,14 +264,14 @@
 }
 
 .project-row:hover .project-arrow {
-  color: var(--accent-strong);
+  color: var(--text-primary);
 }
 
 .project-name {
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -320,14 +331,14 @@
   bottom: -2px;
   width: 100%;
   height: 1px;
-  background: var(--accent-strong);
+  background: var(--text-primary);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.2s ease;
 }
 
 .project-link:hover {
-  color: var(--accent-strong);
+  color: var(--text-primary);
 }
 
 .project-link:hover::after {
@@ -374,8 +385,8 @@
 .experience-title {
   font-family: var(--font-display);
   font-size: clamp(1.1rem, 2.2vw, 1.4rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -430,16 +441,16 @@
 .education-degree {
   font-family: var(--font-display);
   font-size: clamp(1.1rem, 2.2vw, 1.4rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
 .education-card-title {
   font-family: var(--font-display);
   font-size: clamp(1.1rem, 2.2vw, 1.4rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -461,7 +472,7 @@
   bottom: -2px;
   width: 100%;
   height: 1px;
-  background: var(--accent-strong);
+  background: var(--text-primary);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.2s ease;
@@ -503,7 +514,7 @@
 }
 
 .cert-card:hover {
-  border-color: var(--accent-strong);
+  border-color: var(--text-primary);
   transform: translateY(-2px);
 }
 
@@ -526,7 +537,7 @@
 }
 
 .cert-card:hover .cert-card-name {
-  color: var(--accent-strong);
+  color: var(--text-primary);
 }
 
 .cert-verify {
@@ -560,22 +571,22 @@
 }
 
 .cert-card:hover .cert-verify {
-  color: var(--accent-strong);
+  color: var(--text-primary);
 }
 
 /* ── Stack ─────────────────────────────────────── */
 
 .stack-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--space-3);
   margin-top: var(--space-3);
 }
 
 .stack-group-name {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-secondary);
   margin-bottom: var(--space-2);
@@ -584,8 +595,42 @@
 .stack-items {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.85rem;
   list-style: none;
+}
+
+.stack-items .badge {
+  font-size: 0.8rem;
+  padding: 0.5rem 1.1rem;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  transition:
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+.skill-chip:hover {
+  color: var(--text-primary);
+  border-color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.skill-chip-logo {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 /* ── Contact ───────────────────────────────────── */
@@ -626,7 +671,7 @@
 }
 
 .contact-phone:hover {
-  color: var(--accent-strong);
+  color: var(--text-primary);
 }
 
 .contact-email::after,
@@ -637,7 +682,7 @@
   bottom: -2px;
   width: 100%;
   height: 1px;
-  background: var(--accent-strong);
+  background: var(--text-primary);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.25s ease;
@@ -686,6 +731,12 @@
 
   .stack-grid {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    white-space: nowrap;
   }
 }
 

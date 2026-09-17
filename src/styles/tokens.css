@@ -1,7 +1,7 @@
 :root {
   --wipe-duration: 2.5s;
   --wipe-easing: cubic-bezier(0.16, 1, 0.3, 1);
-  --font-display: "DOTGothic16", "Space Grotesk", system-ui, sans-serif;
+  --font-display: "Doto", "Space Grotesk", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 

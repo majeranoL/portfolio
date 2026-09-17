@@ -14,11 +14,34 @@ export function Stack() {
               <div className="stack-group">
                 <h3 className="stack-group-name">{group.group}</h3>
                 <ul className="stack-items">
-                  {group.items.map((item) => (
-                    <li key={item} className="badge">
-                      {item}
-                    </li>
-                  ))}
+                  {group.items.map((item) =>
+                    item.url ? (
+                      <li key={item.name}>
+                        <a
+                          className="skill-chip"
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {item.logo && (
+                            <img
+                              className="skill-chip-logo"
+                              src={item.logo}
+                              alt=""
+                              width={20}
+                              height={20}
+                              loading="lazy"
+                            />
+                          )}
+                          {item.name}
+                        </a>
+                      </li>
+                    ) : (
+                      <li key={item.name} className="badge">
+                        {item.name}
+                      </li>
+                    ),
+                  )}
                 </ul>
               </div>
             </Reveal>

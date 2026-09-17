@@ -87,41 +87,124 @@ export const projects = [
   },
 ] as const;
 
-export const stack = [
+export type StackItem = {
+  name: string;
+  url?: string;
+  logo?: string;
+};
+
+export const stack: ReadonlyArray<{
+  group: string;
+  items: ReadonlyArray<StackItem>;
+}> = [
   {
     group: "Frontend",
     items: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "JavaScript (ES6+)",
-      "HTML5",
-      "CSS3",
-      "Tailwind CSS",
+      {
+        name: "React",
+        url: "https://react.dev",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      },
+      {
+        name: "Next.js",
+        url: "https://nextjs.org",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      },
+      {
+        name: "TypeScript",
+        url: "https://www.typescriptlang.org",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      },
+      {
+        name: "JavaScript (ES6+)",
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      },
+      {
+        name: "HTML5",
+        url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      },
+      {
+        name: "CSS3",
+        url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      },
+      {
+        name: "Tailwind CSS",
+        url: "https://tailwindcss.com",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+      },
     ],
   },
   {
     group: "Backend & API",
-    items: ["Node.js", "Express.js", "PHP", "REST API Design & Integration"],
+    items: [
+      {
+        name: "Node.js",
+        url: "https://nodejs.org",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      },
+      {
+        name: "Express.js",
+        url: "https://expressjs.com",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+      },
+      {
+        name: "PHP",
+        url: "https://www.php.net",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+      },
+      { name: "REST API Design & Integration" },
+    ],
   },
   {
     group: "QA & Testing",
     items: [
-      "Manual Testing",
-      "Functional Testing",
-      "Integration Testing",
-      "Regression Testing",
-      "Test Case Authoring",
-      "Defect Tracking",
+      { name: "Manual Testing" },
+      { name: "Functional Testing" },
+      { name: "Integration Testing" },
+      { name: "Regression Testing" },
+      { name: "Test Case Authoring" },
+      { name: "Defect Tracking" },
     ],
   },
   {
     group: "Tools & Workflow",
-    items: ["Jira", "Postman", "Git", "GitHub"],
+    items: [
+      {
+        name: "Jira",
+        url: "https://www.atlassian.com/software/jira",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg",
+      },
+      {
+        name: "Postman",
+        url: "https://www.postman.com",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
+      },
+      {
+        name: "Git",
+        url: "https://git-scm.com",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+      },
+    ],
   },
   {
     group: "Specialized",
-    items: ["PayMongo", "AI Triage Systems", "Multi-Role Architecture"],
+    items: [
+      {
+        name: "PayMongo",
+        url: "https://www.paymongo.com",
+        logo: "/icons/paymongo.ico",
+      },
+      { name: "AI Triage Systems" },
+      { name: "Multi-Role Architecture" },
+    ],
   },
 ] as const;
 
