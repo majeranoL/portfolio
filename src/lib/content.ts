@@ -82,7 +82,7 @@ export const experience: readonly ExperienceRole[] = [
     points: [],
   },
   {
-    title: "Software Quality Assurance Specialist",
+    title: "Software Quality Assurance",
     company: "Xurpas Inc.",
     companyUrl: "https://xurpas.com",
     period: "Apr 2026 - Sep 2026",
