@@ -85,7 +85,7 @@ export const experience: readonly ExperienceRole[] = [
     title: "Software Quality Assurance Specialist",
     company: "Xurpas Inc.",
     companyUrl: "https://xurpas.com",
-    period: "Apr 2026 - Present",
+    period: "Apr 2026 - Sep 2026",
     points: [
       "Execute comprehensive functional, integration, and end-to-end regression testing across web and mobile application releases using structured manual test suites.",
       "Manage defect lifecycles in Jira by logging, prioritizing, and tracking software bugs while collaborating closely with engineering teams to shorten fix cycles.",
