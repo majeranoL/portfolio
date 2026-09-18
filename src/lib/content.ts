@@ -75,6 +75,13 @@ export type ExperienceRole = {
 
 export const experience: readonly ExperienceRole[] = [
   {
+    title: "Software Developer",
+    company: "Xurpas Inc.",
+    companyUrl: "https://xurpas.com",
+    period: "Sep 2026 - Present",
+    points: [],
+  },
+  {
     title: "Software Quality Assurance Specialist",
     company: "Xurpas Inc.",
     companyUrl: "https://xurpas.com",
