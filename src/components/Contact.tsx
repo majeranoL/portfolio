@@ -3,6 +3,10 @@ import { site } from "../lib/content";
 import { Reveal } from "./Reveal";
 
 const INITIAL_FORM = { name: "", email: "", subject: "", message: "" };
+const CONTACT_WEBHOOK_URL =
+  "https://majeranol.app.n8n.cloud/webhook/portfolio-contact";
+
+type SubmitStatus = "idle" | "sending" | "success" | "error";
 
 const SOCIAL_ICONS: Record<string, string> = {
   linkedin:
@@ -18,6 +22,7 @@ const SOCIAL_ICONS: Record<string, string> = {
 export function Contact() {
   const [form, setForm] = useState(INITIAL_FORM);
   const [copied, setCopied] = useState(false);
+  const [status, setStatus] = useState<SubmitStatus>("idle");
   const copyTimer = useRef<number | null>(null);
 
   useEffect(
@@ -51,15 +56,32 @@ export function Contact() {
 
   const setField = (field: keyof typeof INITIAL_FORM) => (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => setForm((prev) => ({ ...prev, [field]: event.target.value }));
+  ) => {
+    if (status !== "sending") setStatus("idle");
+    setForm((prev) => ({ ...prev, [field]: event.target.value }));
+  };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const subject = encodeURIComponent(form.subject || "Portfolio contact");
-    const body = encodeURIComponent(
-      `Hi Lian,\n\n${form.message}\n\n— ${form.name}\n${form.email}`
-    );
-    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
+    if (status === "sending") return;
+    setStatus("sending");
+    try {
+      const response = await fetch(CONTACT_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+        }),
+      });
+      if (!response.ok) throw new Error(`Request failed: ${response.status}`);
+      setStatus("success");
+      setForm(INITIAL_FORM);
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -175,10 +197,28 @@ export function Contact() {
                 onChange={setField("message")}
               />
             </div>
-            <button className="contact-submit" type="submit">
-              Send via Gmail
+            <button
+              className="contact-submit"
+              type="submit"
+              disabled={status === "sending"}
+            >
+              {status === "sending" ? "Sending…" : "Send Message"}
             </button>
-            <p className="contact-hint">{site.contact.form.hint}</p>
+            {status === "success" && (
+              <p className="contact-hint" role="status">
+                ✓ Thanks! Your message has been sent — you should receive a
+                confirmation email shortly.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="contact-hint" role="alert">
+                Something went wrong. Please try again, or email me directly at{" "}
+                {site.email}.
+              </p>
+            )}
+            {status !== "success" && status !== "error" && (
+              <p className="contact-hint">{site.contact.form.hint}</p>
+            )}
           </form>
         </Reveal>
       </div>
