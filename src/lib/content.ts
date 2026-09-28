@@ -39,7 +39,7 @@ export const site = {
       },
     ],
     form: {
-      hint: "Opens a pre-filled draft in your mail app — just press send.",
+      hint: "Sends straight to my inbox — n8n sends an automatic confirmation reply.",
     },
   },
   github: {
@@ -301,6 +301,19 @@ export const stack: ReadonlyArray<{
     ],
   },
   {
+    group: "AI Automation",
+    items: [
+      {
+        name: "n8n",
+        url: "https://n8n.io",
+        logo: "https://cdn.jsdelivr.net/npm/simple-icons/icons/n8n.svg",
+      },
+      { name: "Workflow Automation" },
+      { name: "Webhooks" },
+      { name: "AI Integration" },
+    ],
+  },
+  {
     group: "Specialized",
     items: [
       {
@@ -308,7 +321,6 @@ export const stack: ReadonlyArray<{
         url: "https://www.paymongo.com",
         logo: "/icons/paymongo.ico",
       },
-      { name: "AI Integration" },
       { name: "Role-Based Portals" },
     ],
   },
