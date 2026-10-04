@@ -57,6 +57,7 @@ body {
   color: var(--text-primary);
   font-family: var(--font-body);
   line-height: 1.6;
+  overscroll-behavior-y: none; /* prevents rubber-band fighting with Lenis */
   transition:
     background-color var(--theme-transition),
     color var(--theme-transition);
@@ -161,11 +162,13 @@ img {
   left: var(--cursor-x, -200px);
   top: var(--cursor-y, -200px);
   transform: translate(-50%, -50%);
+  will-change: left, top;
 }
 
 .reveal {
   opacity: 0;
   transform: translateY(16px);
+  will-change: opacity, transform;
   transition:
     opacity 0.6s ease,
     transform 0.6s ease;
@@ -174,6 +177,7 @@ img {
 .reveal.is-visible {
   opacity: 1;
   transform: none;
+  will-change: auto;
 }
 
 .theme-ring {

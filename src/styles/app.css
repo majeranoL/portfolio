@@ -6,6 +6,7 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
+  touch-action: pan-y;
   transition: background-color var(--theme-transition);
 }
 
@@ -307,6 +308,7 @@
 .section {
   padding: var(--space-5) 0;
   scroll-margin-top: 72px;
+  contain: layout;
 }
 
 .hero-title,
