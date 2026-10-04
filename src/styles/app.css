@@ -1613,4 +1613,161 @@
     gap: var(--space-1);
     text-align: center;
   }
+
+  /* Road to AI — responsive */
+  .rtai-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Road to AI Engineering ────────────────────── */
+
+.rtai-progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.rtai-progress-bar {
+  flex: 1;
+  min-width: 160px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--border-strong);
+  overflow: hidden;
+}
+
+.rtai-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--text-primary);
+  transition: width 0.4s var(--wipe-easing);
+}
+
+.rtai-progress-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.rtai-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.rtai-category {
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: var(--space-2);
+  transition: border-color var(--transition);
+}
+
+.rtai-category:hover {
+  border-color: var(--border-strong);
+}
+
+.rtai-category-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-1);
+  margin-bottom: var(--space-2);
+  padding-bottom: var(--space-1);
+  border-bottom: 1px solid var(--border);
+}
+
+.rtai-category-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.rtai-category-count {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--border-strong);
+  flex-shrink: 0;
+}
+
+.rtai-skill-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.rtai-skill-item {
+  display: flex;
+}
+
+.rtai-checkbox {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  text-align: left;
+  color: inherit;
+}
+
+.rtai-checkbox-box {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
+  border: 1px solid var(--border-strong);
+  border-radius: 3px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    border-color var(--transition),
+    background var(--transition);
+}
+
+.rtai-checkbox-box svg {
+  width: 10px;
+  height: 10px;
+  stroke: var(--bg);
+}
+
+.rtai-checkbox--checked .rtai-checkbox-box {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.rtai-checkbox:hover .rtai-checkbox-box {
+  border-color: var(--text-primary);
+}
+
+.rtai-skill-label {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  transition: color var(--transition);
+}
+
+.rtai-checkbox:hover .rtai-skill-label {
+  color: var(--text-primary);
+}
+
+.rtai-skill-label--done {
+  color: var(--border-strong);
+  text-decoration: line-through;
+  text-decoration-color: var(--border-strong);
 }

@@ -9,6 +9,7 @@ import { Projects } from "./components/Projects";
 import { Stack } from "./components/Stack";
 import { GitHub } from "./components/GitHub";
 import { Education } from "./components/Education";
+import { RoadToAI } from "./components/RoadToAI";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import "./styles/tokens.css";
@@ -31,6 +32,7 @@ export default function App() {
         <Stack />
         <GitHub />
         <Education />
+        <RoadToAI />
         <Contact />
       </main>
       <Footer />
