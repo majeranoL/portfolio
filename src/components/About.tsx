@@ -12,7 +12,11 @@ export function About() {
         <div className="about-grid">
           <Reveal delay={100}>
             <h2 className="section-title">{site.about.headline}</h2>
-            <p className="section-text">{site.about.paragraph}</p>
+            {site.about.paragraph.split("\n\n").map((para, i) => (
+              <p key={i} className="section-text">
+                {para}
+              </p>
+            ))}
           </Reveal>
           <Reveal delay={200}>
             <Terminal />
