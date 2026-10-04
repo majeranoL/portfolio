@@ -1,13 +1,13 @@
 export const site = {
   name: "Lian Karlo Majerano",
-  role: "Full-Stack Developer & QA Specialist",
+  role: "Software Engineer & QA Specialist",
   status: "available for work",
   email: "majeranolian@gmail.com",
   phone: "+63 976 088 3045",
   whoami: {
     name: "$ whoami",
     lines: [
-      "a full-stack developer",
+      "Software Engineer",
       "an SQA specialist",
       "built CommunityOS",
     ],
@@ -15,7 +15,7 @@ export const site = {
   about: {
     headline: "I build products that live on the web and keep them reliable.",
     paragraph:
-      "Full-Stack Developer and Software Quality Assurance Specialist with hands-on experience building production-ready web platforms and enforcing end-to-end software reliability. Skilled in modern JavaScript and TypeScript frameworks like Next.js, React, and Node.js, alongside RESTful API development, database systems, and payment gateway integrations. Proven track record of single-handedly building live SaaS platforms and conducting rigorous manual, functional, and regression testing in agile team environments.\n\nCurrently charting a path toward AI Engineering — actively studying machine learning fundamentals, deep learning, and the growing ecosystem of LLMs and intelligent systems. Still early in the journey, but driven by a belief that the best software engineers of tomorrow will understand how to build with AI, not just around it.",
+      "Software Egnineer and Software Quality Assurance Specialist with hands-on experience building production-ready web platforms and enforcing end-to-end software reliability. Skilled in modern JavaScript and TypeScript frameworks like Next.js, React, and Node.js, alongside RESTful API development, database systems, and payment gateway integrations. Proven track record of single-handedly building live SaaS platforms and conducting rigorous manual, functional, and regression testing in agile team environments.",
   },
   contact: {
     headline: "Got a problem to solve?",
